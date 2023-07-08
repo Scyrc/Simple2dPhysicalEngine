@@ -28,6 +28,7 @@ namespace physicalEngine
 		for (auto& body : bodyList)
 		{
 			body->setVel(body->getVel() + body->getAcc(Gravity) * dt);
+			body->setAnguleVel(body->getAnguleVel() + body->getTorques() * body->GetInvInertia() * dt);
 		}
 	}
 

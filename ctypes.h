@@ -24,6 +24,16 @@ namespace physicalEngine
 			return (*const_cast<Vec2*>(this))[index];
 		}
 
+		Double cross(const Vec2& v) const
+		{
+			return x * v.y - y * v.x;
+		}
+
+		Double dot(const Vec2& v) const
+		{
+			return x * v.x + y * v.y;
+		}
+
 		 Vec2 operator-(const Vec2& v) const
 		 {
 			 return { x - v.x, y - v.y };
@@ -32,6 +42,12 @@ namespace physicalEngine
 		 Vec2 operator+(const Vec2& v) const
 		 {
 			 return { x + v.x, y + v.y };
+		 }
+
+		 void operator+=(const Vec2& v) 
+		 {
+			 x += v.x;
+			 y += v.y;
 		 }
 
 		 Vec2 operator*(Double a) const

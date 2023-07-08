@@ -18,11 +18,11 @@ void reshape(GLsizei w, GLsizei h)
 
 	if (w <= h)
 	{
-		glOrtho(0.0f, 300.0f, 0.0f, 300.0f * h / w, 1.0f, -1.0f);
+		glOrtho(0.0f,w, 0.0f,h * h / w, 1.0f, -1.0f);
 	}
 	else
 	{
-		glOrtho(0.0f, 300.0f * w / h, 0.0f, 300.0f, 1.0f, -1.0f);
+		glOrtho(0.0f, w * w / h, 0.0f, h, 1.0f, -1.0f);
 	}
 
 	glMatrixMode(GL_MODELVIEW);
@@ -30,8 +30,8 @@ void reshape(GLsizei w, GLsizei h)
 }
 void display() {
 	
-	static auto lastTime = GetTickCount() * 0.001f;
-	auto currentTime = GetTickCount() * 0.001f;
+	static auto lastTime = GetTickCount64() * 0.001f;
+	auto currentTime = GetTickCount64() * 0.001f;
 
 	if (currentTime - lastTime > (1.0 / 60.0))
 	{
@@ -44,14 +44,23 @@ void display() {
 }
 void InitScene()
 {
-	staticWorld.addPolygon(1, { { 10, 0 }, {-10,0}, {-10,20}, {10, 30} }, { 100,100 });
+	staticWorld.addPolygon(1, { { -10, -10 }, {0,5}, {60, 0}, }, { 200,400 });
+
+	staticWorld.addPolygon(1, { { 10, 0 }, {-10,0}, {0, 10}, }, { 300,600 });
+
+	staticWorld.addPolygon(1, { { 10, 0 }, {-10,0}, {-10,20}, {10, 30} }, { 400,600 });
+
+	staticWorld.addPolygon(1, { { -22, -10 }, {-30, 15}, {-20, 30}, {10, 20}, {20, -20} }, { 500,600 });
+
+	//staticWorld.addPolygon(1, { { 10, 0 }, {-10,0}, {-10,20}}, { 150,200 });
+
 }
 
 int main(int argc, char** argv)
 {
 	InitScene();
 	glutInit(&argc, argv);                 // Initialize GLUT
-	glutInitWindowSize(600, 600);   // Set the window's initial width & height
+	glutInitWindowSize(800, 800);   // Set the window's initial width & height
 	glutInitWindowPosition(500, 500); // Position the window's initial top-left corner
 	glutCreateWindow("Setup"); // Create a window with the given title
 	//glOrtho(0.0f, 300.0f, 0.0f, 300.0f, 1.0, -1.0);
