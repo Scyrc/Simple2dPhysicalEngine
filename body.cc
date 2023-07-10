@@ -98,8 +98,8 @@ namespace physicalEngine
 
 		glEnd();
 
-		AABB box = AABB(this);
-		box.draw();
+		/*AABB box = AABB(this);
+		box.draw();*/
 	}
 
 	Double Body::GetInvInertia() const

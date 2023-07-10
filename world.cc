@@ -4,6 +4,11 @@
 namespace physicalEngine
 {
 
+	World::World()
+	{
+		bvhTree = new BVHTree();
+	}
+
 	physicalEngine::Polygon* World::addPolygon(float mass, const VerticesListType& verticesList, const Vec2& position /*= { 0, 0 }*/)
 	{
 		auto body = new Polygon(mass, verticesList);
@@ -12,15 +17,23 @@ namespace physicalEngine
 		return body;
 	}
 
+	void World::GenerateTree()
+	{
+		bvhTree->generate(bodyList);
+	}
+
 	void World::step()
 	{
 		Double dt = 1.0 / 60.0;
+		bodyList[0]->setVel(bodyList[0]->getVel() + Vec2(1, 0));
 		StepVelocity(dt);
 		StepPosition(dt);
 		for (auto& body : bodyList)
 		{
 			body->Draw();
 		}
+		bvhTree->update(bodyList);
+		bvhTree->draw();
 	}
 
 	void World::StepVelocity(Double dt)

@@ -52,6 +52,7 @@ void InitScene()
 
 	staticWorld.addPolygon(1, { { -22, -10 }, {-30, 15}, {-20, 30}, {10, 20}, {20, -20} }, { 500,600 });
 
+	staticWorld.GenerateTree();
 	//staticWorld.addPolygon(1, { { 10, 0 }, {-10,0}, {-10,20}}, { 150,200 });
 
 }

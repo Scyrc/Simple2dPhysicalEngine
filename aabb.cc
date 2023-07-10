@@ -18,6 +18,11 @@ namespace physicalEngine
 
 	
 
+	AABB::AABB(const AABB& aabb1, const AABB& aabb2)
+	{
+		Combine(aabb1, aabb2);
+	}
+
 	void AABB::FromPolygon(Body* body)
 	{
 		Polygon* polygon = dynamic_cast<Polygon*>(body);
@@ -44,8 +49,11 @@ namespace physicalEngine
 
 		position = Vec2(minX + 0.5 * width, minY + 0.5 * height);
 
+		lowerBound = { position.x - 0.5 * width, position.y - 0.5 * height };
+		upperBound = { position.x + 0.5 * width, position.y + 0.5 * height };
 
-		zoomSize(1.2);
+
+		//zoomSize(1.2);
 	}
 
 	void AABB::draw()
@@ -68,6 +76,34 @@ namespace physicalEngine
 	{
 		height *= factor;
 		width *= factor;
+
+		lowerBound = { position.x - 0.5 * width, position.y - 0.5 * height };
+		upperBound = { position.x + 0.5 * width, position.y + 0.5 * height };
+	}
+
+	void AABB::Combine(const AABB& aabb1, const AABB& aabb2)
+	{
+		Double minX = std::min(aabb1.lowerBound.x, aabb2.lowerBound.x);
+		Double maxX = std::max(aabb1.upperBound.x, aabb2.upperBound.x);
+		Double minY = std::min(aabb1.lowerBound.y, aabb2.lowerBound.y);
+		Double maxY = std::max(aabb1.upperBound.y, aabb2.upperBound.y);
+
+
+		height = maxY - minY;
+		width = maxX - minX;
+
+		position = Vec2(minX + 0.5 * width, minY + 0.5 * height);
+
+		lowerBound = { position.x - 0.5 * width, position.y - 0.5 * height };
+		upperBound = { position.x + 0.5 * width, position.y + 0.5 * height };
+	}
+
+	bool AABB::Contain(const AABB& aabb1)
+	{
+		return lowerBound.x <= aabb1.lowerBound.x&&
+			lowerBound.y <= aabb1.lowerBound.y&&
+			upperBound.x >= aabb1.upperBound.x&&
+			upperBound.y >= aabb1.upperBound.y;
 	}
 
 }

@@ -30,7 +30,7 @@ namespace physicalEngine
 
 	public:
 		Body(Double mass_) : mass(mass_) {}
-
+		virtual void Draw() = 0;
 	public:
 		virtual BodyType getType() const { return defaultType; }
 		void setPos(const Vec2& Pos) { position = Pos; }
@@ -75,7 +75,7 @@ namespace physicalEngine
 		}
 
 
-		void Draw();
+		virtual void Draw() override;
 	};
 
 
