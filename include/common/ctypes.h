@@ -1,9 +1,15 @@
 #pragma once
 #include <cassert>
 #include <array>
+#include <float.h>
+#include <cmath>
+#include "2dmath.h"
 namespace physicalEngine
 {
 	using Double = double;
+	constexpr Double DoubleMax = DBL_MAX;;
+	constexpr Double DoubleMin = -DBL_MAX;
+
 	struct Mat22;
 	struct Vec2
 	{
@@ -61,6 +67,55 @@ namespace physicalEngine
 			 return { x / a, y / a};
 		 }
 
+		 Vec2 normal() const
+		 {
+			 Vec2 N{ -y, x };
+			 N.normalize();
+			 return N;
+		 }
+
+		 Vec2 defaultNormal() const
+		 {
+			 Vec2 N{ -y, x };
+			 return N;
+		 }
+
+		 Double length () const
+		 {
+			 return std::sqrt(x * x + y * y);
+		 }
+		 void normalize()
+		 {
+			 (*this) = (*this) / std::sqrt(x * x + y * y);
+
+			 
+			 /*
+			 * 
+			 debug  ¥ÌŒÛ–¥∑® ................
+
+			 x /= std::sqrt(x * x + y * y);
+			 y /= std::sqrt(x * x + y * y);
+
+			 */
+
+		 }
+
+		 Double lengthSquared()
+		 {
+			 return x * x + y * y;
+		 }
+
+
+		 static Double DistanceSquared(Vec2 p1, Vec2 p2)
+		 {
+			 return (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y);
+		 }
+
+		 static bool NearlyEqual(Vec2 v1, Vec2 v2)
+		 {
+			 return DistanceSquared(v1, v2) < twoDMath::VerySmallAmount * twoDMath::VerySmallAmount;
+		 }
+
 		
 	};
 
@@ -75,7 +130,7 @@ namespace physicalEngine
 		Mat22(const std::array<Vec2, 2>& mat) :matrix22(mat){}
 
 
-
+		void rotate(Double theta);
 		Vec2 operator*(const Vec2& v) const;
 	};
 

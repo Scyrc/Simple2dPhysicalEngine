@@ -1,4 +1,4 @@
-#include "aabb.h"
+#include "../../include/body/aabb.h"
 #include <gl/glut.h>
 
 namespace physicalEngine
@@ -104,6 +104,22 @@ namespace physicalEngine
 			lowerBound.y <= aabb1.lowerBound.y&&
 			upperBound.x >= aabb1.upperBound.x&&
 			upperBound.y >= aabb1.upperBound.y;
+	}
+
+	bool AABB::overlap(const AABB& aabb)
+	{
+		Vec2 d1, d2;
+
+		d1 = lowerBound - aabb.upperBound;
+		d2 = aabb.lowerBound - upperBound;
+
+		if (d1.x > 0.0f || d1.y > 0.0f)
+			return false;
+
+		if (d2.x > 0.0f || d2.y > 0.0f)
+			return false;
+
+		return true;
 	}
 
 }

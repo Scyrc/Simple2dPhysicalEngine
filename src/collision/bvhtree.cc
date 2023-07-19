@@ -1,11 +1,16 @@
 
-#include "bvhtree.h"
+#include "../../include/collision/bvhtree.h"
 #include <queue>
 #include <iostream>
 
 namespace physicalEngine
 {
 	physicalEngine::BVHTree::~BVHTree()
+	{
+
+	}
+
+	void BVHTree::destory()
 	{
 
 	}
@@ -44,7 +49,7 @@ namespace physicalEngine
 			return;
 		}
 
-		BVHTreeNode* Sibing = findBestSibing(leafNode);
+		BVHTreeNode* Sibing = findBestSibling(leafNode);
 
 		merge(Sibing, leafNode);
 		
@@ -332,7 +337,7 @@ namespace physicalEngine
 		}
 	}
 
-	BVHTreeNode* BVHTree::findBestSibing(BVHTreeNode* Node)
+	BVHTreeNode* BVHTree::findBestSibling(BVHTreeNode* Node)
 	{
 		AABB leafAABB = Node->aabbBound;
 		

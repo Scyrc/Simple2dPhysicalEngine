@@ -1,6 +1,6 @@
 #pragma once
-#include "body.h"
-#include "aabb.h"
+#include "../body/body.h"
+#include "../body/aabb.h"
 #include <map>
 namespace physicalEngine
 {
@@ -15,16 +15,20 @@ namespace physicalEngine
 		BVHTreeNode* childRight = nullptr;
 
 		bool isLeaf() const { return childLeft == nullptr && childRight ==  nullptr;}
+		bool isBranch() const { return parent != nullptr && childLeft != nullptr && childRight != nullptr; }
+
 	};
 
 
 	class BVHTree
 	{
 	public:
+		friend class BroadPhase;
 		BVHTree() =default;
 		~BVHTree();
 		void insert(Body* body);
-		
+
+		void destory();
 
 		void generate(std::vector<Body*> BodyList);
 		void update(std::vector<Body*> BodyList);
@@ -41,7 +45,7 @@ namespace physicalEngine
 		void merge(BVHTreeNode* Sibing, BVHTreeNode* Node);
 		void updateAABB(BVHTreeNode* Node);
 
-		BVHTreeNode* findBestSibing(BVHTreeNode* Node);
+		BVHTreeNode* findBestSibling(BVHTreeNode* Node);
 		void getInheritedCost(BVHTreeNode* currentNode, AABB& NewAABB, Double& InheritedCost);
 	private:
 		

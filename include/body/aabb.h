@@ -15,6 +15,8 @@ namespace physicalEngine
 		void Combine(const AABB& aabb1, const AABB& aabb2);
 
 		bool Contain(const AABB& aabb1);
+
+		bool overlap(const AABB& aabb);
 		//static AABB& CombineAABB(const AABB& aabb1, const AABB& aabb2);
 
 	protected:
