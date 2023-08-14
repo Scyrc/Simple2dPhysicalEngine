@@ -1,4 +1,6 @@
 #include "../../include/body/aabb.h"
+#include "../../include/body/body.h"
+#include "../../include/body/circle.h"
 #include <gl/glut.h>
 
 namespace physicalEngine
@@ -10,6 +12,9 @@ namespace physicalEngine
 		{
 		case PolygonType:
 				FromPolygon(body);
+			break;
+		case CircleType:
+			FromCicle(body);
 			break;
 		default:
 			break;
@@ -56,17 +61,35 @@ namespace physicalEngine
 		//zoomSize(1.2);
 	}
 
+	void AABB::FromCicle(Body* body)
+	{
+		Circle* circle = dynamic_cast<Circle*>(body);
+		assert(circle != nullptr);
+
+		height = circle->getRadius() * 2.0f;
+		width = circle->getRadius() * 2.0f;
+
+		position = circle->getCentroidWorldPos();
+
+		lowerBound = { position.x - circle->getRadius(), position.y - circle->getRadius() };
+		upperBound = { position.x + circle->getRadius(), position.y + circle->getRadius() };
+	}
+
 	void AABB::draw()
 	{
 		glBegin(GL_LINE_LOOP);
 		glBegin(GL_LINE_STRIP);
 		glColor3f(0.0f, 1.0f, 0.0f); 
 
+		auto positionShow = position * 10;
+		auto widthShow = width * 10;
+		auto heightShow = height * 10;
+
 		
-	    glVertex2d(position.x - 0.5 *width, position.y - 0.5 * height);
-		glVertex2d(position.x + 0.5 * width, position.y - 0.5 * height);
-		glVertex2d(position.x + 0.5 * width, position.y + 0.5 * height);
-		glVertex2d(position.x - 0.5 * width, position.y + 0.5 * height);
+	    glVertex2d(positionShow.x  - 0.5 * widthShow, positionShow.y  - 0.5 * heightShow);
+		glVertex2d(positionShow.x  + 0.5 * widthShow, positionShow.y - 0.5 * heightShow);
+		glVertex2d(positionShow.x  + 0.5 * widthShow, positionShow.y  + 0.5 * heightShow);
+		glVertex2d(positionShow.x  - 0.5 * widthShow, positionShow.y  + 0.5 * heightShow);
 
 
 		glEnd();

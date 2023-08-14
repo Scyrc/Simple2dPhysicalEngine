@@ -19,6 +19,8 @@ namespace physicalEngine
 		area = areaSum / 2.0;
 		mass = area * density;
 		std::cout << "area: " << area << " ";
+		std::cout << "mass: " << mass << " ";
+
 	}
 
 	void Polygon::calcCentroid()
@@ -56,7 +58,198 @@ namespace physicalEngine
 		calcArea();
 		calcCentroid();
 		calcInertia();
-		int x = rand() % 14;
+	}
+
+	Polygon::Polygon(Double density_, const VerticesListType& VerticesList_) : Body(density_), VerticesList(VerticesList_)
+	{
+		init();
+	}
+
+	void Polygon::GetVerticesWorldPosition(VerticesListType& posList)
+	{
+		posList.resize(VerticesList.size());
+
+		for (int i = 0; i < VerticesList.size(); ++i)
+		{
+			posList[i] = position + this->operator[](i);
+		}
+	}
+
+	Vec2 Polygon::edge(size_t idx) const
+	{
+		return  this->operator[](idx + 1) - this->operator[](idx);;
+	}
+
+	void Polygon::adjacentEdge(size_t idx, Vec2& edge1, Vec2& edge2) const
+	{
+		edge2 = this->edge(idx);
+
+		if (idx == 0)
+		{
+			edge1 = this->edge(VerticesList.size() - 1);
+		}
+		else
+		{
+			edge1 = this->edge(idx - 1);
+		}
+	}
+
+
+	void Polygon::Draw()
+	{
+		
+		//std::cout << "velocity: " << velocity.x << " " << velocity.y << std::endl;
+		//std::cout << "position: " << position.x << " " << position.y << std::endl;
+
+		//glBegin(GL_LINE_LOOP);
+		//glBegin(GL_LINE_ST12  RIP);
+
+		glBegin(GL_POLYGON);
+		//glColor3f(bodyColor.r, bodyColor.g, bodyColor.b);
+		glColor4f(bodyColor.r, bodyColor.g, bodyColor.b, 0.6f);
+		if(isSleep)
+			glColor3f(0.f, 0.f, 0.f);
+		//VerticesListType* list = GetVerticesWorldPosition();
+		VerticesListType resList(VerticesList.size());
+		for (int i = 0; i < VerticesList.size(); ++i)
+		{
+			resList[i] = position + this->operator[](i);
+			resList[i] = resList[i] * 10;
+		}
+
+		for (auto& v : resList)
+		{
+
+			glVertex2d(v.x, v.y);
+		}
+		glEnd();
+
+		glBegin(GL_LINE_LOOP);
+		glLineWidth(6.0f);
+		glColor4f(bodyColor.r, bodyColor.g, bodyColor.b, 1.f);
+
+		for (auto& v : resList)
+		{
+			glVertex2d(v.x, v.y);
+		}
+		glEnd();
+
+
+		auto centroidWorldPos = centroid + position;
+		
+		centroidWorldPos = centroidWorldPos * 10;
+		glColor3f(0.0f, 1.0f, 0.0f);    //设置绘图颜色
+		glRectf(centroidWorldPos.x - 2.f, centroidWorldPos.y - 2.f, centroidWorldPos.x + 2.f, centroidWorldPos.y + 2.f);  //绘制矩形
+
+	}
+
+	size_t Polygon::getEdgeNums() const
+	{
+		return VerticesList.size();
+	}
+
+	physicalEngine::Vec2 Polygon::getCentroidWorldPos() const
+	{
+		return centroid + position;
+	}
+
+	void Body::stepPos(Double dt)
+	{
+		if (isStatic) return;
+
+		lastPosition = position;
+		lastAngle = angle;
+
+		position += velocity * dt;
+		angle += angularVelocity * dt;
+		RotationMatrix.rotate(angle);
+
+		if (fallDownMode )
+		{
+			if(position.y < 0.f)
+				position.y += Constant::sceneTop;
+
+			if (position.x < 0.f)
+				position.x += Constant::sceneR;
+
+			if (position.x > Constant::sceneR)
+				position.x -= Constant::sceneR;
+		}
+
+		if (!enableSleep) return;
+		if (isSleep) return;
+
+		if (lastPosition.fuzzyEqual(position, 1e-4 / dt) && twoDMath::nearlyEqual(lastAngle, angle, 1e-5 / dt))
+		{
+			++sleepCount;
+			//std::cout << "sleepCount:" << sleepCount << std::endl;
+		}
+		else
+		{
+			sleepCount = 0;
+		}
+
+		if (sleepCount >= sleepMax)
+		{
+			sleepCount = 0;
+			isSleep = true;
+			velocity = Vec2(0.f, 0.f);
+			angularVelocity = 0.f;
+		}
+
+		
+
+	}
+
+	void Body::stepVel(Vec2 GravityAcc, Double dt)
+	{
+		if (isStatic) return;
+
+		if (isSleep && (!lastPosition.fuzzyEqual(position, 1e-4 / dt) || !twoDMath::nearlyEqual(lastAngle, angle, 1e-5 / dt)))
+		{
+			isSleep = false;
+		}
+
+		//if (isSleep) return;
+
+		Double lvd = 1.0f / (1.0f + dt * linearVelocityDamping);
+		Double avd = 1.0f / (1.0f + dt * angularVelocityDamping);
+
+
+		velocity += getAcc(GravityAcc * mass) * dt;
+		velocity = velocity * lvd;
+
+		angularVelocity += torques * GetInvInertia() * dt;
+		angularVelocity *= avd;
+
+
+	}
+
+	void Body::initColor()
+	{
+		int x = rand() % 5;
+
+		switch (x)
+		{
+		case 0:
+			bodyColor = BodyColor(245, 90, 60);
+			break;
+		case 1:
+			bodyColor = BodyColor(236, 236, 209);
+			break;
+		case 2:
+			bodyColor = BodyColor(6,  62,123);
+			break;
+		case 3:
+			bodyColor = BodyColor(242, 150, 72);
+			break;
+		case 4:
+			bodyColor = BodyColor(245, 210, 89);
+			break;
+		default:
+			break;
+		}
+		/*
 		switch (x)
 		{
 		case 0:
@@ -104,104 +297,12 @@ namespace physicalEngine
 		default:
 			break;
 		}
+		*/
 	}
 
-	Polygon::Polygon(Double density_, const VerticesListType& VerticesList_) : Body(density_), VerticesList(VerticesList_)
+	Body::Body(Double density_) : density(density_)
 	{
-		init();
-	}
-
-	void Polygon::GetVerticesWorldPosition(VerticesListType& posList)
-	{
-		posList.resize(VerticesList.size());
-
-		for (int i = 0; i < VerticesList.size(); ++i)
-		{
-			posList[i] = position + this->operator[](i);
-		}
-	}
-
-	physicalEngine::Vec2 Polygon::edge(size_t idx) const
-	{
-		return  this->operator[](idx + 1) - this->operator[](idx);;
-	}
-
-	void Polygon::Draw()
-	{
-		
-		//std::cout << "velocity: " << velocity.x << " " << velocity.y << std::endl;
-		//std::cout << "position: " << position.x << " " << position.y << std::endl;
-
-		//glBegin(GL_LINE_LOOP);
-		//glBegin(GL_LINE_ST12  RIP);
-
-		glBegin(GL_POLYGON);
-		glColor3f(bodyColor.r, bodyColor.g, bodyColor.b);
-		//VerticesListType* list = GetVerticesWorldPosition();
-		VerticesListType resList(VerticesList.size());
-		for (int i = 0; i < VerticesList.size(); ++i)
-		{
-			resList[i] = position + this->operator[](i);
-		}
-
-		for (auto& v : resList)
-		{
-			glVertex2d(v.x, v.y);
-		}
-		glEnd();
-
-		glBegin(GL_LINE_LOOP);
-		glLineWidth(3.0f);
-		glColor3f(1.f, 1.f, 1.f);
-		for (int i = 0; i < VerticesList.size(); ++i)
-		{
-			resList[i] = position + this->operator[](i);
-		}
-
-		for (auto& v : resList)
-		{
-			glVertex2d(v.x, v.y);
-		}
-		glEnd();
-
-
-		auto centroidWorldPos = centroid + position;
-		
-		//glColor3f(0.0f, 1.0f, 0.0f);    //设置绘图颜色
-		//glRectf(centroidWorldPos.x - 2.f, centroidWorldPos.y - 2.f, centroidWorldPos.x + 2.f, centroidWorldPos.y + 2.f);  //绘制矩形
-
-	}
-
-	size_t Polygon::getEdgeNums() const
-	{
-		return VerticesList.size();
-	}
-
-	physicalEngine::Vec2 Polygon::getCentroidWorldPos() const
-	{
-		return centroid + position;
-	}
-
-	void Polygon::stepPos(Double dt)
-	{
-		if (isStatic) return;
-		position +=  velocity * dt;
-
-		angle += angularVelocity * dt;
-
-		RotationMatrix.rotate(angle);
-	}
-
-	void Polygon::stepVel(Vec2 GravityAcc,Double dt)
-	{
-		if (isStatic) return;
-		velocity += getAcc(GravityAcc * mass) * dt;
-		
-		//velocity = velocity *0.97;
-		angularVelocity += torques * GetInvInertia() * dt;
-
-		//angularVelocity = angularVelocity * 0.97;
-
+		initColor();
 	}
 
 	void Body::setVel(const Vec2& Vel)
@@ -222,8 +323,29 @@ namespace physicalEngine
 	}
 
 
+	void Body::applyImpulse(const Vec2& impulse, const Vec2& r)
+	{
+		if (isStatic) return;
+		velocity += impulse * getMassInv();
+		angularVelocity += GetInvInertia() * r.cross(impulse);
+	}
+
+	Vec2 Body::toLocalPoint(const Vec2& point) const
+	{
+		Mat22 RotateMTemp;
+		RotateMTemp.rotate(-angle);
+
+		return RotateMTemp * (point - getCentroidWorldPos());
+	}
+
+	physicalEngine::Vec2 Body::toWorldPoint(const Vec2& point) const
+	{
+		return RotationMatrix * (point) + centroid + position;
+	}
+
 	void  Polygon::move(Vec2 mtv)
 	{
+		if (isStatic) return;
 		position += mtv;
 	}
 

@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "bvhtree.h"
 #include "../body/body.h"
 

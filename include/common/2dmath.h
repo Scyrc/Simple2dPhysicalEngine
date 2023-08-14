@@ -7,9 +7,14 @@ namespace physicalEngine
 	public:
 		static  double VerySmallAmount;
 
-		static bool nearlyEqual(double v1, double v2)
+		static bool nearlyEqual(double v1, double v2, double diff)
 		{
-			return abs(v1 - v2) < VerySmallAmount;
+			return fabs(v1 - v2) <= diff;
+		}
+
+		static bool realEqual(double v1, double v2)
+		{
+			return fabs(v1 - v2) <= 0.00001f;
 		}
 	};
 

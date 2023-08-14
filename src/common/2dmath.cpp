@@ -3,6 +3,6 @@
 
 namespace physicalEngine
 {
-	double twoDMath::VerySmallAmount = DBL_MIN;
+	double twoDMath::VerySmallAmount = 0.005f;
 
 }

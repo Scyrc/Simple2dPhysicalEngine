@@ -4,9 +4,10 @@
 #include <float.h>
 #include <cmath>
 #include "2dmath.h"
+#include "constant.h"
 namespace physicalEngine
 {
-	using Double = double;
+	
 	constexpr Double DoubleMax = DBL_MAX;;
 	constexpr Double DoubleMin = -DBL_MAX;
 
@@ -111,9 +112,19 @@ namespace physicalEngine
 			 return (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y);
 		 }
 
+		 static Double twoPointsDistance(Vec2 p1, Vec2 p2)
+		 {
+			 return std::sqrt(Vec2::DistanceSquared(p1, p2));
+		 }
+
 		 static bool NearlyEqual(Vec2 v1, Vec2 v2)
 		 {
-			 return DistanceSquared(v1, v2) < twoDMath::VerySmallAmount * twoDMath::VerySmallAmount;
+			 return DistanceSquared(v1, v2) <= twoDMath::VerySmallAmount * twoDMath::VerySmallAmount;
+		 }
+
+		 bool fuzzyEqual(const Vec2& rhs, const Double& diff) const
+		 {
+			 return std::abs(x - rhs.x) <= diff && std::abs(y - rhs.y) <= diff;
 		 }
 
 		
@@ -132,6 +143,13 @@ namespace physicalEngine
 
 		void rotate(Double theta);
 		Vec2 operator*(const Vec2& v) const;
+		Mat22 operator*(const Double& v) const;
+
+		Mat22 invert() const;
+
+		Vec2 multiply(const Vec2& v) const;
+
+		Double det() const;
 	};
 
 	

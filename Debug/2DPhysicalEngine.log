@@ -1,8 +1,188 @@
-﻿  main.cpp
-D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\2dmath.h(14,3): warning C4091: “static ”: 没有声明变量时忽略“physicalEngine::twoDMath”的左侧
-D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\main.cpp(68,48): warning C4244: “参数”: 从“double”转换到“GLsizei”，可能丢失数据
-D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\main.cpp(68,27): warning C4244: “参数”: 从“double”转换到“GLsizei”，可能丢失数据
-D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\main.cpp(78,58): warning C4305: “参数”: 从“double”到“GLclampf”截断
-D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\main.cpp(122,57): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\main.cpp(122,36): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-LINK : fatal error LNK1104: 无法打开文件“freeglutd.lib”
+﻿  circle.cpp
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\common\2dmath.h(19,3): warning C4091: “static ”: 没有声明变量时忽略“physicalEngine::twoDMath”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\circle.cpp(31,48): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\circle.cpp(31,35): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\circle.cpp(31,22): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\circle.cpp(45,48): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\circle.cpp(45,35): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\circle.cpp(45,22): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\circle.cpp(56,48): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\circle.cpp(56,35): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\circle.cpp(56,22): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+  contact.cpp
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\common\2dmath.h(19,3): warning C4091: “static ”: 没有声明变量时忽略“physicalEngine::twoDMath”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\contact.h(32,3): warning C4091: “typedef ”: 没有声明变量时忽略“physicalEngine::VelocityConstrainyPoint”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\contact.h(66,3): warning C4091: “typedef ”: 没有声明变量时忽略“physicalEngine::ContactConstraintPoint”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\contact.h(97,3): warning C4091: “typedef ”: 没有声明变量时忽略“physicalEngine::Contact”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\contact.h(106,3): warning C4091: “typedef ”: 没有声明变量时忽略“physicalEngine::Sat”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\contact.h(118,3): warning C4091: “typedef ”: 没有声明变量时忽略“physicalEngine::Collision”的左侧
+  2dmath.cpp
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\common\2dmath.h(19,3): warning C4091: “static ”: 没有声明变量时忽略“physicalEngine::twoDMath”的左侧
+  2DPhysicalEngine.cpp
+  aabb.cc
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\common\2dmath.h(19,3): warning C4091: “static ”: 没有声明变量时忽略“physicalEngine::twoDMath”的左侧
+  body.cc
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\common\2dmath.h(19,3): warning C4091: “static ”: 没有声明变量时忽略“physicalEngine::twoDMath”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\body.cc(72,21): warning C4018: “<”: 有符号/无符号不匹配
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\body.cc(94,48): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\body.cc(94,35): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\body.cc(94,22): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\body.cc(99,21): warning C4018: “<”: 有符号/无符号不匹配
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\body.cc(114,48): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\body.cc(114,35): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\body.cc(114,22): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\body.cc(127,108): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\body.cc(127,82): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\body.cc(127,56): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\body.cc(127,30): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+  bvhtree.cc
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\common\2dmath.h(19,3): warning C4091: “static ”: 没有声明变量时忽略“physicalEngine::twoDMath”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\collision\bvhtree.cc(357,22): warning C4244: “初始化”: 从“physicalEngine::Double”转换到“float”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\collision\bvhtree.cc(360,15): warning C4244: “初始化”: 从“physicalEngine::Double”转换到“float”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\collision\bvhtree.cc(383,17): warning C4244: “初始化”: 从“physicalEngine::Double”转换到“float”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\collision\bvhtree.cc(391,19): warning C4244: “初始化”: 从“physicalEngine::Double”转换到“float”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\collision\bvhtree.cc(407,19): warning C4244: “初始化”: 从“physicalEngine::Double”转换到“float”，可能丢失数据
+  ctypes.cpp
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\common\2dmath.h(19,3): warning C4091: “static ”: 没有声明变量时忽略“physicalEngine::twoDMath”的左侧
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_glfw.cpp
+  imgui_impl_opengl3.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  main1.cpp
+  main.cpp
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\common\2dmath.h(19,3): warning C4091: “static ”: 没有声明变量时忽略“physicalEngine::twoDMath”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(144,152): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(144,115): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(144,78): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(144,41): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(148,276): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(148,208): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(148,140): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(148,72): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\imgui\myimgui.h(108,3): warning C4091: “static ”: 没有声明变量时忽略“physicalEngine::EngineGUI”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\main.cpp(76,48): warning C4244: “参数”: 从“double”转换到“GLsizei”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\main.cpp(76,27): warning C4244: “参数”: 从“double”转换到“GLsizei”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\main.cpp(132,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\main.cpp(140,57): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\main.cpp(140,36): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\main.cpp(149,36): warning C4566: 由通用字符名称“\u202A”表示的字符不能在当前代码页(936)中表示出来
+  myimgui.cpp
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\common\2dmath.h(19,3): warning C4091: “static ”: 没有声明变量时忽略“physicalEngine::twoDMath”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(144,152): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(144,115): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(144,78): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(144,41): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(148,276): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(148,208): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(148,140): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(148,72): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\imgui\myimgui.h(108,3): warning C4091: “static ”: 没有声明变量时忽略“physicalEngine::EngineGUI”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\imgui\myimgui.cpp(6,82): warning C4305: “参数”: 从“double”到“float”截断
+  world.cc
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\common\2dmath.h(19,3): warning C4091: “static ”: 没有声明变量时忽略“physicalEngine::twoDMath”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(144,152): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(144,115): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(144,78): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(144,41): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(148,276): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(148,208): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(148,140): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\body\distance_joint.h(148,72): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\contact.h(32,3): warning C4091: “typedef ”: 没有声明变量时忽略“physicalEngine::VelocityConstrainyPoint”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\contact.h(66,3): warning C4091: “typedef ”: 没有声明变量时忽略“physicalEngine::ContactConstraintPoint”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\contact.h(97,3): warning C4091: “typedef ”: 没有声明变量时忽略“physicalEngine::Contact”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\contact.h(106,3): warning C4091: “typedef ”: 没有声明变量时忽略“physicalEngine::Sat”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\contact.h(118,3): warning C4091: “typedef ”: 没有声明变量时忽略“physicalEngine::Collision”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\common\common.h(51,18): warning C4018: “<”: 有符号/无符号不匹配
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\common\common.h(71,15): warning C4244: “初始化”: 从“physicalEngine::Double”转换到“float”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\common\common.h(195,20): warning C4244: “初始化”: 从“const _Ty”转换到“float”，可能丢失数据
+          with
+          [
+              _Ty=physicalEngine::Double
+          ]
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\common\common.h(216,20): warning C4244: “初始化”: 从“const _Ty”转换到“float”，可能丢失数据
+          with
+          [
+              _Ty=physicalEngine::Double
+          ]
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\collision.h(531,3): warning C4091: “static ”: 没有声明变量时忽略“physicalEngine::CollisionManager”的左侧
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\collision.h(274,123): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\collision.h(274,94): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\collision.h(274,65): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\collision.h(274,36): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLfloat”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\include\collision\collision.h(479,26): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\world.cc(85,55): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLclampf”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\world.cc(85,42): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLclampf”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\world.cc(85,29): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLclampf”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\world.cc(85,16): warning C4244: “参数”: 从“physicalEngine::Double”转换到“GLclampf”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\world.cc(379,24): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\world.cc(384,105): warning C4305: “参数”: 从“double”到“float”截断
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\world.cc(406,217): warning C4305: “参数”: 从“double”到“float”截断
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\world.cc(423,192): warning C4305: “参数”: 从“double”到“float”截断
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\world.cc(553,17): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\world.cc(609,185): warning C4305: “参数”: 从“double”到“float”截断
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\world.cc(659,26): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\world.cc(660,26): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\world.cc(722,43): warning C4305: “初始化”: 从“double”到“float”截断
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\world.cc(779,17): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\2DPhysicalEngine\src\body\world.cc(781,13): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+  正在生成代码...
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwGetError，函数 "bool __cdecl ImGui_ImplGlfw_Init(struct GLFWwindow *,bool,enum GlfwClientApi)" (?ImGui_ImplGlfw_Init@@YA_NPAUGLFWwindow@@_NW4GlfwClientApi@@@Z) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwSetErrorCallback，函数 "bool __cdecl ImGui_ImplGlfw_Init(struct GLFWwindow *,bool,enum GlfwClientApi)" (?ImGui_ImplGlfw_Init@@YA_NPAUGLFWwindow@@_NW4GlfwClientApi@@@Z) 中引用了该符号
+main1.obj : error LNK2001: 无法解析的外部符号 _glfwSetErrorCallback
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwSetMonitorCallback，函数 "void __cdecl ImGui_ImplGlfw_InstallCallbacks(struct GLFWwindow *)" (?ImGui_ImplGlfw_InstallCallbacks@@YAXPAUGLFWwindow@@@Z) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwGetWindowSize，函数 "void __cdecl ImGui_ImplGlfw_NewFrame(void)" (?ImGui_ImplGlfw_NewFrame@@YAXXZ) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwGetFramebufferSize，函数 "void __cdecl ImGui_ImplGlfw_NewFrame(void)" (?ImGui_ImplGlfw_NewFrame@@YAXXZ) 中引用了该符号
+main1.obj : error LNK2001: 无法解析的外部符号 _glfwGetFramebufferSize
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwGetWindowAttrib，函数 "void __cdecl ImGui_ImplGlfw_UpdateMouseData(void)" (?ImGui_ImplGlfw_UpdateMouseData@@YAXXZ) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwSetWindowFocusCallback，函数 "void __cdecl ImGui_ImplGlfw_InstallCallbacks(struct GLFWwindow *)" (?ImGui_ImplGlfw_InstallCallbacks@@YAXPAUGLFWwindow@@@Z) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwGetInputMode，函数 "void __cdecl ImGui_ImplGlfw_CursorEnterCallback(struct GLFWwindow *,int)" (?ImGui_ImplGlfw_CursorEnterCallback@@YAXPAUGLFWwindow@@H@Z) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwSetInputMode，函数 "void __cdecl ImGui_ImplGlfw_UpdateMouseCursor(void)" (?ImGui_ImplGlfw_UpdateMouseCursor@@YAXXZ) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwGetKeyName，函数 "int __cdecl ImGui_ImplGlfw_TranslateUntranslatedKey(int,int)" (?ImGui_ImplGlfw_TranslateUntranslatedKey@@YAHHH@Z) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwGetKey，函数 "void __cdecl ImGui_ImplGlfw_UpdateKeyModifiers(struct GLFWwindow *)" (?ImGui_ImplGlfw_UpdateKeyModifiers@@YAXPAUGLFWwindow@@@Z) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwGetCursorPos，函数 "void __cdecl ImGui_ImplGlfw_UpdateMouseData(void)" (?ImGui_ImplGlfw_UpdateMouseData@@YAXXZ) 中引用了该符号
+main.obj : error LNK2001: 无法解析的外部符号 _glfwGetCursorPos
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwSetCursorPos，函数 "void __cdecl ImGui_ImplGlfw_UpdateMouseData(void)" (?ImGui_ImplGlfw_UpdateMouseData@@YAXXZ) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwCreateStandardCursor，函数 "bool __cdecl ImGui_ImplGlfw_Init(struct GLFWwindow *,bool,enum GlfwClientApi)" (?ImGui_ImplGlfw_Init@@YA_NPAUGLFWwindow@@_NW4GlfwClientApi@@@Z) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwDestroyCursor，函数 "void __cdecl ImGui_ImplGlfw_Shutdown(void)" (?ImGui_ImplGlfw_Shutdown@@YAXXZ) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwSetCursor，函数 "void __cdecl ImGui_ImplGlfw_UpdateMouseCursor(void)" (?ImGui_ImplGlfw_UpdateMouseCursor@@YAXXZ) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwSetKeyCallback，函数 "void __cdecl ImGui_ImplGlfw_InstallCallbacks(struct GLFWwindow *)" (?ImGui_ImplGlfw_InstallCallbacks@@YAXPAUGLFWwindow@@@Z) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwSetCharCallback，函数 "void __cdecl ImGui_ImplGlfw_InstallCallbacks(struct GLFWwindow *)" (?ImGui_ImplGlfw_InstallCallbacks@@YAXPAUGLFWwindow@@@Z) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwSetMouseButtonCallback，函数 "void __cdecl ImGui_ImplGlfw_InstallCallbacks(struct GLFWwindow *)" (?ImGui_ImplGlfw_InstallCallbacks@@YAXPAUGLFWwindow@@@Z) 中引用了该符号
+main.obj : error LNK2001: 无法解析的外部符号 _glfwSetMouseButtonCallback
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwSetCursorPosCallback，函数 "void __cdecl ImGui_ImplGlfw_InstallCallbacks(struct GLFWwindow *)" (?ImGui_ImplGlfw_InstallCallbacks@@YAXPAUGLFWwindow@@@Z) 中引用了该符号
+main.obj : error LNK2001: 无法解析的外部符号 _glfwSetCursorPosCallback
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwSetCursorEnterCallback，函数 "void __cdecl ImGui_ImplGlfw_InstallCallbacks(struct GLFWwindow *)" (?ImGui_ImplGlfw_InstallCallbacks@@YAXPAUGLFWwindow@@@Z) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwSetScrollCallback，函数 "void __cdecl ImGui_ImplGlfw_InstallCallbacks(struct GLFWwindow *)" (?ImGui_ImplGlfw_InstallCallbacks@@YAXPAUGLFWwindow@@@Z) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwGetGamepadState，函数 "void __cdecl ImGui_ImplGlfw_UpdateGamepads(void)" (?ImGui_ImplGlfw_UpdateGamepads@@YAXXZ) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwSetClipboardString，函数 "void __cdecl ImGui_ImplGlfw_SetClipboardText(void *,char const *)" (?ImGui_ImplGlfw_SetClipboardText@@YAXPAXPBD@Z) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwGetClipboardString，函数 "char const * __cdecl ImGui_ImplGlfw_GetClipboardText(void *)" (?ImGui_ImplGlfw_GetClipboardText@@YAPBDPAX@Z) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwGetTime，函数 "void __cdecl ImGui_ImplGlfw_NewFrame(void)" (?ImGui_ImplGlfw_NewFrame@@YAXXZ) 中引用了该符号
+imgui_impl_glfw.obj : error LNK2019: 无法解析的外部符号 _glfwGetWin32Window，函数 "bool __cdecl ImGui_ImplGlfw_Init(struct GLFWwindow *,bool,enum GlfwClientApi)" (?ImGui_ImplGlfw_Init@@YA_NPAUGLFWwindow@@_NW4GlfwClientApi@@@Z) 中引用了该符号
+main1.obj : error LNK2019: 无法解析的外部符号 _glfwInit，函数 "int __cdecl main1(int,char * *)" (?main1@@YAHHPAPAD@Z) 中引用了该符号
+main.obj : error LNK2001: 无法解析的外部符号 _glfwInit
+main1.obj : error LNK2019: 无法解析的外部符号 _glfwTerminate，函数 "int __cdecl main1(int,char * *)" (?main1@@YAHHPAPAD@Z) 中引用了该符号
+main.obj : error LNK2001: 无法解析的外部符号 _glfwTerminate
+main1.obj : error LNK2019: 无法解析的外部符号 _glfwWindowHint，函数 "int __cdecl main1(int,char * *)" (?main1@@YAHHPAPAD@Z) 中引用了该符号
+main.obj : error LNK2001: 无法解析的外部符号 _glfwWindowHint
+main1.obj : error LNK2019: 无法解析的外部符号 _glfwCreateWindow，函数 "int __cdecl main1(int,char * *)" (?main1@@YAHHPAPAD@Z) 中引用了该符号
+main.obj : error LNK2001: 无法解析的外部符号 _glfwCreateWindow
+main1.obj : error LNK2019: 无法解析的外部符号 _glfwDestroyWindow，函数 "int __cdecl main1(int,char * *)" (?main1@@YAHHPAPAD@Z) 中引用了该符号
+main.obj : error LNK2001: 无法解析的外部符号 _glfwDestroyWindow
+main1.obj : error LNK2019: 无法解析的外部符号 _glfwWindowShouldClose，函数 "int __cdecl main1(int,char * *)" (?main1@@YAHHPAPAD@Z) 中引用了该符号
+main.obj : error LNK2001: 无法解析的外部符号 _glfwWindowShouldClose
+main1.obj : error LNK2019: 无法解析的外部符号 _glfwPollEvents，函数 "int __cdecl main1(int,char * *)" (?main1@@YAHHPAPAD@Z) 中引用了该符号
+main.obj : error LNK2001: 无法解析的外部符号 _glfwPollEvents
+main1.obj : error LNK2019: 无法解析的外部符号 _glfwMakeContextCurrent，函数 "int __cdecl main1(int,char * *)" (?main1@@YAHHPAPAD@Z) 中引用了该符号
+main.obj : error LNK2001: 无法解析的外部符号 _glfwMakeContextCurrent
+main1.obj : error LNK2019: 无法解析的外部符号 _glfwSwapBuffers，函数 "int __cdecl main1(int,char * *)" (?main1@@YAHHPAPAD@Z) 中引用了该符号
+main.obj : error LNK2001: 无法解析的外部符号 _glfwSwapBuffers
+main1.obj : error LNK2019: 无法解析的外部符号 _glfwSwapInterval，函数 "int __cdecl main1(int,char * *)" (?main1@@YAHHPAPAD@Z) 中引用了该符号
+main.obj : error LNK2001: 无法解析的外部符号 _glfwSwapInterval
+main.obj : error LNK2019: 无法解析的外部符号 _glfwSetWindowIcon，函数 _main 中引用了该符号
+main.obj : error LNK2019: 无法解析的外部符号 _SOIL_load_image，函数 _main 中引用了该符号
+main.obj : error LNK2019: 无法解析的外部符号 _SOIL_free_image_data，函数 _main 中引用了该符号
+D:\bupt\github\2dPhysicalEngine\2DPhysicalEngine\Debug\2DPhysicalEngine.exe : fatal error LNK1120: 40 个无法解析的外部命令

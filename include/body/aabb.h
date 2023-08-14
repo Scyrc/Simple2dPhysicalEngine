@@ -21,6 +21,7 @@ namespace physicalEngine
 
 	protected:
 		void FromPolygon(Body* body);
+		void FromCicle(Body* body);
 
 	private:
 		Vec2 position; // 矩形几何中心作为位置

@@ -1,4 +1,4 @@
-#include <gl/glut.h>
+ï»¿#include <gl/glut.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <windows.h>
@@ -6,9 +6,10 @@
 #include <atomic>
 #include <chrono>
 #include <thread>
+#include <SOIL.h>
 #include "../include/body/world.h"
 #include "./imgui/myimgui.h"
-
+#include "./imgui/stb_image.h"
 static physicalEngine::World staticWorld;
 constexpr double windowTop = 900.f;
 constexpr double windowBottom = 0.f;
@@ -33,26 +34,26 @@ void MouseFun(GLFWwindow* window1, int button, int action, int mods)
 	if (button == GLFW_MOUSE_BUTTON_RIGHT) {
 		if (action == GLFW_PRESS)
 		{
-			//std::cout << "ÓÒ¼üµã»÷ x: " << x << " y: " << y << std::endl;
+			//std::cout << "å³é”®ç‚¹å‡» x: " << x << " y: " << y << std::endl;
 
 			staticWorld.addRandomBody(x, y);
 		}
 		else if (action == GLFW_RELEASE)
 		{
-			//std::cout << "ÓÒ¼üÊÍ·Å x: " << x << " y: " << y << std::endl;
+			//std::cout << "å³é”®é‡Šæ”¾ x: " << x << " y: " << y << std::endl;
 		}
 	}
 	else if (button == GLFW_MOUSE_BUTTON_LEFT)
 	{
 		if (action == GLFW_PRESS)
 		{
-			//std::cout << "×ó¼üµã»÷ x: " << x << " y: " << y << std::endl;
+			//std::cout << "å·¦é”®ç‚¹å‡» x: " << x << " y: " << y << std::endl;
 
 			staticWorld.selectBody(x, y);
 		}
 		else if (action == GLFW_RELEASE)
 		{
-			//std::cout << "×ó¼üÊÍ·Å: " << x << " y: " << y << std::endl;
+			//std::cout << "å·¦é”®é‡Šæ”¾: " << x << " y: " << y << std::endl;
 
 			staticWorld.clearSelectBody();
 		}
@@ -64,8 +65,10 @@ void MouseMoveFun(GLFWwindow* window, double x, double y)
 	if (x > sceneMaxXpos) return;
 	y = windowTop - y;
 	
+	x /= 10.f;
+	y /= 10.f;
 	staticWorld.dragBodyToPos(x, y);
-	//std::cout << "ÒÆ¶¯ÖÁx: " << x << " y: " << y << std::endl;
+	//std::cout << "ç§»åŠ¨è‡³x: " << x << " y: " << y << std::endl;
 }
 
 void display() {
@@ -79,14 +82,22 @@ void display() {
 	glLoadIdentity();
 
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_STENCIL);
-
+	//glfwWindowHint(GLFW_SAMPLES, 8);
+	//glEnable(GL_MULT);
 	glEnable(GL_BLEND);
+	glEnable(GL_POINT_SMOOTH);
 	glEnable(GL_LINE_SMOOTH);
-	glHint(GL_LINE_SMOOTH_HINT, GL_FASTEST);
+	glEnable(GL_POLYGON_SMOOTH);
+
+	glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
+	glHint(GL_POINT_SMOOTH_HINT, GL_NICEST);
+	glHint(GL_POLYGON_SMOOTH, GL_NICEST);
+
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	staticWorld.draw();
 	//staticWorld.Unlock();
+	//glDisable(GL_MULT);
 
 }
 void InitScene()
@@ -120,10 +131,11 @@ int main()
 {
 	srand(time(0));
 	InitScene();
-	//ÊµÀý»¯glfw´°¿Ú£¬²¢¸æËßglfwÊ¹ÓÃµÄopengl°æ±¾£ºmajor 3£¬minor 3£¨3.3£©
+	//å®žä¾‹åŒ–glfwçª—å£ï¼Œå¹¶å‘Šè¯‰glfwä½¿ç”¨çš„openglç‰ˆæœ¬ï¼šmajor 3ï¼Œminor 3ï¼ˆ3.3ï¼‰
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+
 
 	window = glfwCreateWindow(windowR - windowL, windowTop - windowBottom, "2DPhysicalEngine", nullptr, nullptr);
 	if (window == nullptr)
@@ -133,12 +145,36 @@ int main()
 		return -1;
 	}
 
+	
+
 	//glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 	glfwMakeContextCurrent(window);
 	glfwSwapInterval(1); // Enable vsync
 
 	glfwSetMouseButtonCallback(window, MouseFun);
 	glfwSetCursorPosCallback(window, MouseMoveFun);
+
+	//GLFWimage icons[1];
+	//icons[0].pixels = SOIL_load_image("â€ªC:\\Users\\sc\\Desktop\\2\\logo.ico", &icons[0].width, &icons[0].height, 0, 4);
+	//glfwSetWindowIcon(window, 1, icons);
+	////SOIL_free_image_data(icons[0].pixels);
+
+	GLFWimage icon;
+	int channels = 0;
+	icon.pixels = SOIL_load_image("D:\\2d2.png", &icon.width, &icon.height, &channels, SOIL_LOAD_RGBA);
+	if (icon.pixels == NULL) {
+		printf("\nError loading image: %s\n", SOIL_last_result());
+	}
+	else
+	{
+		glfwSetWindowIcon(window, 1, &icon);
+	}
+
+	//GLFWimage images[1];
+	//images[0].pixels = stbi_load("â€ªD:\\logo2.png", &images[0].width, &images[0].height, 0, 4); //rgba channels 
+	//glfwSetWindowIcon(window, 1, images);
+
+
 
 	std::thread physical_thread(PhysicalEngineRun);
 
@@ -153,7 +189,7 @@ int main()
 
 		glfwSwapBuffers(window);
 
-		//processInput(window);//ÊäÈë¼ì²â
+		//processInput(window);//è¾“å…¥æ£€æµ‹
 	}
 	physical_thread.join();
 	physicalEngine::EngineGUI::Clearup();
