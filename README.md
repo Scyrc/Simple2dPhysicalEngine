@@ -10,3 +10,5 @@
 - UI界面:使用opengl绘制图形，imgui界面管理，用户交互
 
 ### 场景
+- fallDown
+![image](https://github.com/ywsimon/Taichi_demo/blob/master/gif/fallDown.gif)
